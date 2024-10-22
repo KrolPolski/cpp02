@@ -6,7 +6,7 @@
 /*   By: rboudwin <rboudwin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 15:48:57 by rboudwin          #+#    #+#             */
-/*   Updated: 2024/08/20 16:55:38 by rboudwin         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:54:43 by rboudwin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ private:
 public:
     Fixed();
     Fixed(const Fixed& other);
+	Fixed& operator=(const Fixed& other);
     ~Fixed();
     int getRawBits(void) const;
     void setRawBits(int const raw);
 };
-#endif;
+#endif
 
