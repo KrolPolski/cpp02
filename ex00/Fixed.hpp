@@ -6,7 +6,7 @@
 /*   By: rboudwin <rboudwin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 15:48:57 by rboudwin          #+#    #+#             */
-/*   Updated: 2024/10/22 16:54:43 by rboudwin         ###   ########.fr       */
+/*   Updated: 2024/10/23 16:32:18 by rboudwin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 class Fixed
 {
 private:
-    int value;
-    static const int fractional;
+    int					_value;
+    static const int	_fractional;
 public:
     Fixed();
     Fixed(const Fixed& other);
