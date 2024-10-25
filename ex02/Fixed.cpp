@@ -6,7 +6,7 @@
 /*   By: rboudwin <rboudwin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 15:49:01 by rboudwin          #+#    #+#             */
-/*   Updated: 2024/10/25 15:47:11 by rboudwin         ###   ########.fr       */
+/*   Updated: 2024/10/25 16:07:06 by rboudwin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,10 +125,33 @@ Fixed Fixed::operator/(const Fixed& other) const
 	return (temp);	
 }
 
-/*Fixed& Fixed::operator++();
-Fixed& Fixed::operator--();
-Fixed& Fixed::operator++(int);
-Fixed& Fixed::operator--(int);*/	
+Fixed& Fixed::operator++()
+{
+	++_value;
+	return (*this);
+}
+
+Fixed& Fixed::operator--()
+{
+	--_value;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp = *this;
+	
+	this->_value++;
+	return (tmp);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp = *this;
+	
+	this->_value--;
+	return (tmp);
+}
 
 Fixed::~Fixed()
 {
@@ -157,4 +180,36 @@ void Fixed::setRawBits(int const raw)
 {
 	std::cout << "Member function setRawBits called" << std::endl;
     _value = raw;
+}
+		
+Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a <= b)
+		return (a);
+	else
+		return (b);
+}
+
+Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a >= b)
+		return (a);
+	else
+		return (b);	
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if (a <= b)
+		return (a);
+	else
+		return (b);
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a >= b)
+		return (a);
+	else
+		return (b);	
 }
